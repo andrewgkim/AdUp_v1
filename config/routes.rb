@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+
+  devise_for :users
+root 'ads#index'
+
+
+
   # Routes for the Ad_view resource:
   # CREATE
   get('/ad_views/new', { :controller => 'ad_views', :action => 'new' })
