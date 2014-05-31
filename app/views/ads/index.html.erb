@@ -7,8 +7,8 @@
 <table class="table table-hover">
   <thead>
     <tr>
-      <th>Ad url</th>
-      <th>Cpv</th>
+      <th>Ad</th>
+      <th>CPV</th>
       <th>Company</th>
       <th></th>
       <th></th>
@@ -19,9 +19,17 @@
   <tbody>
     <% @ads.each do |ad| %>
       <tr>
-        <td><%= ad.ad_url %></td>
+        <td>
+        <embed width="420" height="345" src="<%= ad.ad_url %>"  type="application/x-shockwave-flash">
+        </embed>
+        <iframe width="420" height="345" src="<%= ad.ad_url %>">
+        </iframe>
+
+        </td>
         <td><%= ad.cpv %></td>
         <td><%= ad.company %></td>
+
+
         <td>
           <a href="/ads/<%= ad.id %>" class="btn btn-primary">
             <i class="fa fa-search-plus"></i>
