@@ -1,0 +1,55 @@
+<div class="page-header">
+  <h1>Category #<%= @category.id %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Category</dt>
+  <dd><%= @category.category %></dd>
+
+</dl>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Ad</th>
+      <th>CPV</th>
+      <th>Company</th>
+       <th>ID</th>
+
+       <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ads.each do |ad| %>
+      <tr>
+        <td>
+        <iframe width="640" height="390" src="<%= ad.ad_url %>" frameborder="0" allowfullscreen></iframe>
+        </td>
+        <td><%= ad.cpv %></td>
+        <td><%= ad.company %></td>
+        <td><%= ad.id %></td>
+
+        <td>
+          <a href="/ads/<%= ad.id %>" class="btn btn-primary">
+            <i class="fa fa-search-plus"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/ads/<%= ad.id %>/edit" class="btn btn-warning">
+            <i class="fa fa-edit"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/delete_ad/<%= ad.id %>" class="btn btn-danger">
+            <i class="fa fa-trash-o"></i>
+          </a>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+

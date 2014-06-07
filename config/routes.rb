@@ -34,6 +34,10 @@ Rails.application.routes.draw do
   get('/delete_picture/:id', { :controller => 'pictures', :action => 'destroy' })
   #------------------------------
 
+  get('/my_categories', { :controller => 'categories', :action => 'my_categories' })
+  get('/my_ad_views', { :controller => 'ad_views', :action => 'my_ad_views' })
+
+
   devise_for :users
 root 'ads#index'
 

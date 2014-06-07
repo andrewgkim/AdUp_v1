@@ -47,4 +47,10 @@ class AdViewsController < ApplicationController
 
     redirect_to "/ad_views", :notice => "Ad view deleted."
   end
+
+
+  def my_ad_views
+  end
+
+
 end
