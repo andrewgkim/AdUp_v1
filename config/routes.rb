@@ -1,5 +1,39 @@
 Rails.application.routes.draw do
 
+  # Routes for the Tagging resource:
+  # CREATE
+  get('/taggings/new', { :controller => 'taggings', :action => 'new' })
+  get('/create_tagging', { :controller => 'taggings', :action => 'create' })
+
+  # READ
+  get('/taggings', { :controller => 'taggings', :action => 'index' })
+  get('/taggings/:id', { :controller => 'taggings', :action => 'show' })
+
+  # UPDATE
+  get('/taggings/:id/edit', { :controller => 'taggings', :action => 'edit' })
+  get('/update_tagging/:id', { :controller => 'taggings', :action => 'update' })
+
+  # DELETE
+  get('/delete_tagging/:id', { :controller => 'taggings', :action => 'destroy' })
+  #------------------------------
+
+  # Routes for the Picture resource:
+  # CREATE
+  get('/pictures/new', { :controller => 'pictures', :action => 'new' })
+  get('/create_picture', { :controller => 'pictures', :action => 'create' })
+
+  # READ
+  get('/pictures', { :controller => 'pictures', :action => 'index' })
+  get('/pictures/:id', { :controller => 'pictures', :action => 'show' })
+
+  # UPDATE
+  get('/pictures/:id/edit', { :controller => 'pictures', :action => 'edit' })
+  get('/update_picture/:id', { :controller => 'pictures', :action => 'update' })
+
+  # DELETE
+  get('/delete_picture/:id', { :controller => 'pictures', :action => 'destroy' })
+  #------------------------------
+
   devise_for :users
 root 'ads#index'
 

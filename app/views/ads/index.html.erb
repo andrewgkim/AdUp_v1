@@ -10,7 +10,9 @@
       <th>Ad</th>
       <th>CPV</th>
       <th>Company</th>
-      <th></th>
+       <th>ID</th>
+
+       <th></th>
       <th></th>
       <th></th>
     </tr>
@@ -20,15 +22,11 @@
     <% @ads.each do |ad| %>
       <tr>
         <td>
-        <embed width="420" height="345" src="<%= ad.ad_url %>"  type="application/x-shockwave-flash">
-        </embed>
-        <iframe width="420" height="345" src="<%= ad.ad_url %>">
-        </iframe>
-
+        <iframe width="640" height="390" src="<%= ad.ad_url %>" frameborder="0" allowfullscreen></iframe>
         </td>
         <td><%= ad.cpv %></td>
         <td><%= ad.company %></td>
-
+        <td><%= ad.id %></td>
 
         <td>
           <a href="/ads/<%= ad.id %>" class="btn btn-primary">
@@ -49,4 +47,5 @@
     <% end %>
   </tbody>
 </table>
+
 

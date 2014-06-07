@@ -1,5 +1,6 @@
 class Category < ActiveRecord::Base
 
-has_many :ads
+  has_many :taggings
+  has_many :ads, :through => :taggings
 
 end

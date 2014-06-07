@@ -5,6 +5,12 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find(params[:id])
+    # @ads = @category.ads
+    @taggings = @category.taggings
+    @ads = []
+    @taggings.each do |tagging|
+      @ads << Ad.find(tagging.ad_id)
+    end
   end
 
   def new
@@ -47,4 +53,6 @@ class CategoriesController < ApplicationController
 
     redirect_to "/categories", :notice => "Category deleted."
   end
+
+
 end

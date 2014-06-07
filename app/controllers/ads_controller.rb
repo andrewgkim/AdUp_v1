@@ -49,4 +49,5 @@ class AdsController < ApplicationController
 
     redirect_to "/ads", :notice => "Ad deleted."
   end
+
 end

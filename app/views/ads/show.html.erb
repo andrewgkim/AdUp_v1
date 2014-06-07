@@ -5,11 +5,7 @@
 <dl class="dl-horizontal">
   <dt>Ad</dt>
   <dd>
-        <embed width="420" height="345" src=" <%= @ad.ad_url %> type="application/x-shockwave-flash">
-        </embed>
-
-        <iframe width="420" height="345" src="<$= @ad.ad_url %>">
-        </iframe>
+    <iframe width="640" height="390" src="<%= @ad.ad_url %>" frameborder="0" allowfullscreen></iframe>
  </dd>
   <dt>CPV</dt>
   <dd><%= @ad.cpv %></dd>
@@ -17,4 +13,16 @@
   <dt>Company</dt>
   <dd><%= @ad.company %></dd>
 
+  <dt>Ad ID</dt>
+  <dd><%= @ad.id %></dd>
+ <li>
+    <form action="/create_tagging">
+      <textarea id="content" name="content" placeholder="Add your Tag" class="form-control" rows="3"></textarea>
+
+      <input type="hidden" id="photo_id" name="photo_id" value="<%= @ad %>">
+      <input type="submit" value="Add Tag" class="btn btn-primary">
+
+    </form>
+  </li>
 </dl>
+

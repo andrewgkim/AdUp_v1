@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140531162110) do
+ActiveRecord::Schema.define(version: 20140604004341) do
 
   create_table "ad_views", force: true do |t|
     t.integer  "ad_id"
@@ -31,6 +31,20 @@ ActiveRecord::Schema.define(version: 20140531162110) do
   create_table "categories", force: true do |t|
     t.integer  "ad_id"
     t.string   "category"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "pictures", force: true do |t|
+    t.string   "source"
+    t.text     "caption"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "taggings", force: true do |t|
+    t.integer  "category_id"
+    t.integer  "ad_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
