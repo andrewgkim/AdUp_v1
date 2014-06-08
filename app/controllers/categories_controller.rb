@@ -13,6 +13,18 @@ class CategoriesController < ApplicationController
     end
   end
 
+  def highest_cpv
+    @category = Category.find(params[:id])
+    # @ads = @category.ads
+    @taggings = @category.taggings
+    @ads = []
+    @taggings.each do |tagging|
+      @ads << Ad.find(tagging.ad_id)
+    @highest_cpv = @ads.order ("cpv ASC").last
+    end
+  end
+
+
   def new
     @category = Category.new
   end

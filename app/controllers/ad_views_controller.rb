@@ -1,5 +1,19 @@
 class AdViewsController < ApplicationController
   def index
+    @ad_views = AdView.user_id
+  end
+
+  def show
+    @category = Category.find(params[:id])
+    # @ads = @category.ads
+    @taggings = @category.taggings
+    @ads = []
+    @taggings.each do |tagging|
+      @ads << Ad.find(tagging.ad_id)
+    end
+  end
+
+  def index
     @ad_views = AdView.all
   end
 

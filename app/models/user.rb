@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-has_many :ad_views
+  has_many :ad_views
+  has_many :ads, :through => :ad_views
+
 
 end
