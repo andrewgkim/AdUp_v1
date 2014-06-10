@@ -1,7 +1,7 @@
 class AdView < ActiveRecord::Base
 
-has_many :ads
-has_many :users
+belongs_to :ad
+belongs_to :user
 
 
 end

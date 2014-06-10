@@ -1,7 +1,7 @@
 class Tagging < ActiveRecord::Base
 
-  belongs_to :ads
-  belongs_to :categories
+  belongs_to :ad
+  belongs_to :category
 
 
 end

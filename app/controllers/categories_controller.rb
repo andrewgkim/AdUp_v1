@@ -5,23 +5,8 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find(params[:id])
-    # @ads = @category.ads
-    @taggings = @category.taggings
-    @ads = []
-    @taggings.each do |tagging|
-      @ads << Ad.find(tagging.ad_id)
-    end
-  end
+    @ads = @category.ads.order("cpv DESC").first
 
-  def highest_cpv
-    @category = Category.find(params[:id])
-    # @ads = @category.ads
-    @taggings = @category.taggings
-    @ads = []
-    @taggings.each do |tagging|
-      @ads << Ad.find(tagging.ad_id)
-    @highest_cpv = @ads.order ("cpv ASC").last
-    end
   end
 
 

@@ -4,8 +4,6 @@
 
 
 
-</dl>
-
 <table class="table table-hover">
   <thead>
     <tr>
@@ -19,14 +17,12 @@
 
 
   <tbody>
-    <% @ads.each do |ad| %>
       <tr>
         <td>
-        <iframe width="640" height="390" src="<%= ad.ad_url %>" frameborder="0" allowfullscreen></iframe>
+        <iframe width="640" height="390" src="<%= @ads.ad_url %>" frameborder="0" allowfullscreen></iframe>
         </td>
-        <td><%= ad.cpv %></td>
+        <td><%= @ads.cpv %></td>
       </tr>
-    <% end %>
   </tbody>
 </table>
 
