@@ -1,0 +1,27 @@
+
+<p> </p>
+
+<div class="jumbotron">
+  <h1>AdUp</h1>
+  <p>AdUp is a new platform that puts YOU in control of what ads you want to see.  It gives you control over what categories, topics, and subjects.  Want to hear the best part?  You get PAID for the ads you watch?  Isn't that awesome? </p>
+  <p> <a href="/users/sign_up" class="btn btn-primary btn-lg">Learn more</a></p>
+</div>
+
+
+<h2>Sign in</h2>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div><%= f.label :email %><br />
+  <%= f.email_field :email, autofocus: true %></div>
+
+  <div><%= f.label :password %><br />
+    <%= f.password_field :password, autocomplete: "off" %></div>
+
+  <% if devise_mapping.rememberable? -%>
+    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+  <% end -%>
+
+  <div><%= f.submit "Sign in" %></div>
+<% end %>
+
+<%= render "devise/shared/links" %>
