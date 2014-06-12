@@ -8,10 +8,14 @@ class AdsController < ApplicationController
        @ad = Ad.find(params[:id])
   end
 
-
   def new
     @ad = Ad.new
   end
+
+
+  def about
+  end
+
 
   def create
     @ad = Ad.new

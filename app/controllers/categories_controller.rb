@@ -6,7 +6,6 @@ class CategoriesController < ApplicationController
   def show
     @category = Category.find(params[:id])
     @ads = @category.ads.order("cpv DESC").first
-
   end
 
 

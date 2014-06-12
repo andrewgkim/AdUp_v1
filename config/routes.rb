@@ -20,6 +20,9 @@ Rails.application.routes.draw do
 
   get('/my_categories', { :controller => 'categories', :action => 'my_categories' })
   get('/my_ad_views', { :controller => 'ad_views', :action => 'my_ad_views' })
+  get('/tech', { :controller => 'ads', :action => 'show' })
+  get('/about', { :controller => 'ads', :action => 'about' })
+
 
 
 
