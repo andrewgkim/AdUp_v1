@@ -1,28 +1,24 @@
 <div class="page-header">
-  <h1>Ad #<%= @ad.id %></h1>
+  <h1></h1>
 </div>
 
-<dl class="dl-horizontal">
-  <dt>Ad</dt>
-  <dd>
-    <iframe width="640" height="390" src="<%= @ad.ad_url %>" frameborder="0" allowfullscreen></iframe>
- </dd>
-  <dt>CPV</dt>
-  <dd><%= @ad.cpv %></dd>
 
-  <dt>Company</dt>
-  <dd><%= @ad.company %></dd>
 
-  <dt>Ad ID</dt>
-  <dd><%= @ad.id %></dd>
- <li>
-    <form action="/create_tagging">
-      <textarea id="content" name="content" placeholder="Add your Tag" class="form-control" rows="3"></textarea>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
 
-      <input type="hidden" id="photo_id" name="photo_id" value="<%= @ad %>">
-      <input type="submit" value="Add Tag" class="btn btn-primary">
 
-    </form>
-  </li>
-</dl>
 
+  <tbody>
+      <tr>
+        <td>
+        <iframe width="640" height="390" src="<%= @ad.ad_url %>" frameborder="0" allowfullscreen></iframe>
+        </td>
+      </tr>
+  </tbody>
+</table>

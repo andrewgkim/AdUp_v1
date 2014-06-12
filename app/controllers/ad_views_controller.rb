@@ -3,23 +3,16 @@ class AdViewsController < ApplicationController
     @ad_views = AdView.user_id
   end
 
+
   def show
-    @category = Category.find(params[:id])
-    # @ads = @category.ads
-    @taggings = @category.taggings
-    @ads = []
-    @taggings.each do |tagging|
-      @ads << Ad.find(tagging.ad_id)
-    end
+    @holler = Ad_View.find(params[:id])
+
   end
 
   def index
     @ad_views = AdView.all
   end
 
-  def show
-    @ad_view = AdView.find(params[:id])
-  end
 
   def new
     @ad_view = AdView.new
@@ -31,7 +24,7 @@ class AdViewsController < ApplicationController
     @ad_view.user_id = params[:user_id]
 
     if @ad_view.save
-      redirect_to "/ad_views", :notice => "Ad view created successfully."
+      redirect_to "/ads/#{@ad_view.ad_id}", :notice => "Happy Viewing!"
     else
       render 'new'
     end
@@ -64,6 +57,7 @@ class AdViewsController < ApplicationController
 
 
   def my_ad_views
+      @views = current_user.ad_views
   end
 
 

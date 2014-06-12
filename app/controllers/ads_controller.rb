@@ -3,9 +3,11 @@ class AdsController < ApplicationController
     @ads = Ad.all
   end
 
-  def show
-    @ad = Ad.find(params[:id])
+
+ def show
+       @ad = Ad.find(params[:id])
   end
+
 
   def new
     @ad = Ad.new

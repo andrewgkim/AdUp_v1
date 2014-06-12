@@ -1,29 +1,9 @@
-<div class="page-header">
-  <h1>Feelin #<%= @category.category %>?</h1>
+
+<div class ="page-header">
+  <h3> The <%= @category.category %> video you are going to watch is worth $<%= @ads.cpv %>.  Do you wish to continue?</h3>
 </div>
 
-
-
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th>Video</th>
-      <th>$ and Cents</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-
-
-  <tbody>
-      <tr>
-        <td>
-        <iframe width="640" height="390" src="<%= @ads.ad_url %>" frameborder="0" allowfullscreen></iframe>
-        </td>
-        <td><%= @ads.cpv %></td>
-      </tr>
-  </tbody>
-</table>
-
-
+<ul class="pager">
+  <li><a href="/my_categories">Nah, take me back to my categories</a></li>
+  <li><a href="/create_ad_view?ad_id=<%= @ads.id %>&user_id=<%= current_user.id %>"> Hell yeah!</a></li>
+</ul>

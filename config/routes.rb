@@ -17,26 +17,11 @@ Rails.application.routes.draw do
   get('/delete_tagging/:id', { :controller => 'taggings', :action => 'destroy' })
   #------------------------------
 
-  # Routes for the Picture resource:
-  # CREATE
-  get('/pictures/new', { :controller => 'pictures', :action => 'new' })
-  get('/create_picture', { :controller => 'pictures', :action => 'create' })
-
-  # READ
-  get('/pictures', { :controller => 'pictures', :action => 'index' })
-  get('/pictures/:id', { :controller => 'pictures', :action => 'show' })
-
-  # UPDATE
-  get('/pictures/:id/edit', { :controller => 'pictures', :action => 'edit' })
-  get('/update_picture/:id', { :controller => 'pictures', :action => 'update' })
-
-  # DELETE
-  get('/delete_picture/:id', { :controller => 'pictures', :action => 'destroy' })
-  #------------------------------
 
   get('/my_categories', { :controller => 'categories', :action => 'my_categories' })
   get('/my_ad_views', { :controller => 'ad_views', :action => 'my_ad_views' })
-  get('/highest_cpv', { :controller => 'categories', :action => 'highest_cpv' })
+
+
 
   devise_for :users
 
