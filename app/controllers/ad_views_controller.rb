@@ -58,6 +58,7 @@ class AdViewsController < ApplicationController
 
   def my_ad_views
       @views = current_user.ad_views
+      @current_ads =current_user.ads
   end
 
 
