@@ -3,11 +3,12 @@ source 'https://rubygems.org'
 gem 'starter_generators', :git => "git://github.com/rbetina/starter_generators.git", :branch => "kiei925"
 gem 'devise'
 gem 'seed_dump'
+gem 'rails_12factor', group: :production
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
